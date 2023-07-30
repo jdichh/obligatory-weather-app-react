@@ -1,34 +1,36 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from 'react'
+import 'axios'
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  // const weatherURL = "https://api.openweathermap.org/data/2.5/weather?lat=14.1938814&lon=121.1573673&appid=b162337f1c528138112bf67bcb4afa9f"
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div>
+      <div className="container">
+        <div className="top">
+          <div className="location">
+            {/* location here */}
+          </div>
+          <div className="temps">
+            {/* temperature data */}
+          </div>
+          <div className="description">
+            {/* other info */}
+          </div>
+        </div>
+        <div className="bottom">
+          <div className="feels-like">
+            {/* feels like */}
+          </div>
+          <div className="humidity">
+            {/* humidity data */}
+          </div>
+          <div className="wind-speed">
+            {/* wind speed */}
+          </div>
+        </div>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </div>
   )
 }
 
