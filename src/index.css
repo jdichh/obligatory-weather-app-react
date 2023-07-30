@@ -33,7 +33,7 @@ svg {
   width: 100%;
   height: 100vh;
   overflow-y: hidden;
-  background-color: rgba(0, 0, 0, 0.45);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .search {
@@ -45,8 +45,8 @@ svg {
   font-family: "DM Sans", sans-serif;
   font-size: 1rem;
   border-radius: 3px;
-  background: rgba(0, 0, 0, 0.35);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0);
   padding: 0.5rem 0.5rem;
 }
 
