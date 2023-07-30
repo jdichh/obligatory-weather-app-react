@@ -1,3 +1,3 @@
 # Obligatory Weather App in React
 This is a weather app made in React, using the OpenWeatherMap API.
-I will be componentizing parts of it in the future as I am still learning more about React.
+I will separate parts of the app into individual components in the future, as I am learning more about React.
