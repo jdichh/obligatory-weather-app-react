@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100;9..40,200;9..40,300;9..40,400;9..40,600&display=swap');
 
 :root {
   font-family: 'DM Sans', sans-serif;
@@ -14,13 +14,27 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  color: var(--off-white)
+  color: var(--off-white);
+  font-size: 100%;
+  font-weight: 400;
 }
 
 body {
   background: url(assets/backgrounds/bg-1280.webp) no-repeat center center/cover;
   content: '';
   z-index: -1;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: auto;
+  max-width: 700px;
+  min-height: 700px;
+  padding: 0 1rem;
+  position: relative;
+  margin-top: 5%
 }
 
 .main {
@@ -31,13 +45,19 @@ body {
   background-color: rgba(0,0,0, 0.3);
 }
 
-@media (min-width: 1600px) { 
+.temps p {
+  font-size: 5rem;
+  font-weight: 600;
+}
+
+
+@media (min-width: 100em) { 
   body { 
     background: url(assets/backgrounds/bg-1600.webp) no-repeat center center/cover;
   }
 }
 
-@media (min-width: 2160px) { 
+@media (min-width: 135em) { 
   body { 
     background: url(assets/backgrounds/bg-4000.webp) no-repeat center center/cover;
   }

@@ -6,28 +6,27 @@ const App = () => {
 
   return (
     <div class="main">
-      
       <div className="container">
         <div className="top">
           <div className="location">
-            temp
+            <p>Calamba</p>
           </div>
           <div className="temps">
-            {/* temperature data */}
+            <p>24°C</p>
           </div>
           <div className="description">
-            {/* other info */}
+            <p>quite rainy</p>
           </div>
         </div>
         <div className="bottom">
           <div className="feels-like">
-            {/* feels like */}
+            <p>feels like 18°C</p>
           </div>
           <div className="humidity">
-            {/* humidity data */}
+            <p>10%</p>
           </div>
           <div className="wind-speed">
-            {/* wind speed */}
+            <p>8 kph</p>
           </div>
         </div>
       </div>
