@@ -44,9 +44,10 @@ svg {
 
 .search input {
   font-family: "DM Sans", sans-serif;
+  font-size: 1rem;
   border-radius: 3px;
-  background: rgba(255, 255, 255, 0.1);
-  border: rgba(255, 255, 255, 0.1);
+  background: rgba(0,0,0, 0.35);
+  border: 1px solid rgba(255, 255, 255, .5);
   padding: 0.5rem 0.5rem;
 }
 
@@ -92,7 +93,7 @@ svg {
   border-radius: 3px;
 }
 
-@media (min-width: 20em) {
+/* @media (min-width: 20em) {
   body {
     background: url(assets/backgrounds/1920.webp) no-repeat center center/cover;
   }
@@ -102,4 +103,4 @@ svg {
   body {
     background: url(assets/backgrounds/2400.webp) no-repeat center center/cover;
   }
-}
+} */

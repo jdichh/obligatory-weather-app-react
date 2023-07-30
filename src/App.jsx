@@ -1,6 +1,9 @@
 import React, { useState, useLayoutEffect } from "react";
 import axios from "axios";
 
+
+
+
 const App = () => {
    // location
    const [data, setData] = useState({});
@@ -15,6 +18,19 @@ const App = () => {
        setLocation("");
      }
    };
+
+  // change bg based on hour and screen width
+  const currentTime = new Date();
+  const currentHour = currentTime.getHours();
+  if (currentHour >= 5 && currentHour < 7){
+    document.body.style.background = "url('./src/assets/backgrounds/morning/2400.webp') no-repeat center center/cover";
+  } else if (currentHour >= 7 && currentHour < 17) {
+      document.body.style.background = "url('./src/assets/backgrounds/day/2400.webp') no-repeat center center/cover";
+  } else if(currentHour >= 17 && currentHour < 18) {
+      document.body.style.background = "url('./src/assets/backgrounds/sunset/2400.webp') no-repeat center center/cover";
+  } else {
+      document.body.style.background = "url('./src/assets/backgrounds/night/2400.webp') no-repeat center center/cover";
+  }
 
   return (
     <div className="main">
