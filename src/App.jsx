@@ -55,7 +55,9 @@ const App = () => {
       <div className="container">
         <div className="top">
           <div className="temps">
-            {data.main ? <p>{data.main.temp.toFixed(0)}°C</p> : <p>°C</p>}
+            {data.main ? 
+              <p> {data.main.temp.toFixed(0)}°C</p> 
+              : <p>?°C</p>}
           </div>
           <div className="description-location">
             {data.name && data.sys ? (
@@ -63,9 +65,20 @@ const App = () => {
                 {data.name}, {data.sys.country}
               </p>
             ) : (
-              <p>Hmm.</p>
+              null
             )}
-            {data.weather ? <p>{data.weather[0].main}</p> : <p>Hmm.</p>}
+          </div>
+          <div className="image">
+            {data.weather ? (
+              <img
+                src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
+                width="50px"
+                height="50px"
+              ></img>
+            ) : null}
+          </div>
+          <div className="weather">
+            {data.weather ? <p>{data.weather[0].main}</p> : null}
           </div>
         </div>
         <div className="date-time">
