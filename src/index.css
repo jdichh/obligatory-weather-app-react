@@ -25,29 +25,44 @@ body {
   z-index: -1;
 }
 
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin: auto;
-  max-width: 700px;
-  min-height: 700px;
-  padding: 0 1rem;
-  position: relative;
-  margin-top: 5%
+svg {
+  width: 25px;
+  height: 25px;
 }
 
 .main {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  height: 100vh;
   overflow-y: hidden;
-  background-color: rgba(0,0,0, 0.3);
+  background-color: rgba(0,0,0, 0.45);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  position: relative;
+  margin: auto;
+  max-width: 550px;
+  height: 550px;
+  top: 15%
 }
 
 .temps p {
   font-size: 5rem;
   font-weight: 600;
+}
+
+.bottom {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: 1rem auto;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
 }
 
 
