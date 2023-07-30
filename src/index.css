@@ -87,14 +87,14 @@ svg {
   display: flex;
   justify-content: space-evenly;
   width: 90%;
-  margin: 1rem auto;
+  margin: auto;
   padding: 1rem;
   background-color: rgba(255, 255, 255, 0.1);
   border-radius: 3px;
 }
 
 
-@media (min-width: 100em) { 
+@media (min-width: 20em) { 
   body { 
     background: url(assets/backgrounds/1920.webp) no-repeat center center/cover;
   }

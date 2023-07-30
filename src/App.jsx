@@ -67,7 +67,7 @@ const App = () => {
               ) : null}
             </div>
             <div className="weather">
-              {data.weather ? <p>{data.weather[0].main}</p> : null}
+              {data.weather ? <p>{data.weather[0].main}</p> : <p>Hmm.</p>}
             </div>
             <div className="description-location">
               {data.name && data.sys ? (
