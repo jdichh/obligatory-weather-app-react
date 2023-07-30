@@ -2,21 +2,23 @@ import React, { useState, useLayoutEffect } from "react";
 import axios from "axios";
 
 const App = () => {
+   // location
+   const [data, setData] = useState({});
+   const [location, setLocation] = useState("");
+ 
+   const searchLocation = (event) => {
+     if (event.key == "Enter") {
+       axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${import.meta.env.VITE_API_KEY}&units=metric`).then((response) => {
+         setData(response.data);
+         // console.log(response.data);
+       });
+       setLocation("");
+       
+     }
+   };
+   
   // get time and date
   const [currentTime, setCurrentTime] = useState(new Date());
-  const weekday = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  const day = new Date();
-  let dayName = weekday[day.getDay()];
-  const timeNow = currentTime.toLocaleTimeString();
-  const dateNow = currentTime.toLocaleDateString();
   useLayoutEffect(() => {
     const interval = setInterval(() => {
       setCurrentTime(new Date());
@@ -28,19 +30,9 @@ const App = () => {
   }, []);
   // end
 
-  // location
-  const [data, setData] = useState({});
-  const [location, setLocation] = useState("");
+  const timeNow = currentTime.toLocaleTimeString()
+  const dateNow = currentTime.toLocaleDateString()
 
-  const searchLocation = (event) => {
-    if (event.key == "Enter") {
-      axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${import.meta.env.VITE_API_KEY}&units=metric`).then((response) => {
-        setData(response.data);
-        // console.log(response.data);
-      });
-      setLocation("");
-    }
-  };
   return (
     <div className="main">
       <div className="search">
@@ -78,12 +70,7 @@ const App = () => {
             </div>
           </div>
         </div>
-        <div className="date-time">
-          <p>
-            {dateNow}, {dayName}
-          </p>
-          <p>{timeNow}</p>
-        </div>
+
         <div className="bottom">
           <div className="feels-like">
             <svg
@@ -148,6 +135,10 @@ const App = () => {
               <p>wind speed</p>
             )}
           </div>
+        </div>
+        <div className="date-time">
+          <p>{dateNow}</p>
+          <p>{timeNow}</p>
         </div>
       </div>
     </div>
