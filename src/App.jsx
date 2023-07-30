@@ -1,10 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const App = () => {
   const [data, setData] = useState({});
   const [location, setLocation] = useState("");
-  const weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=b162337f1c528138112bf67bcb4afa9f`;
+  const [currentTime, setCurrentTime] = useState(new Date());
+  const weekday = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  const day = new Date();
+  let dayName = weekday[day.getDay()];
+  const timeNow = currentTime.toLocaleTimeString();
+  const dateNow = currentTime.toLocaleDateString();
+
+  const weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=b162337f1c528138112bf67bcb4afa9f&units=metric`;
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
 
   const searchLocation = (event) => {
     if (event.key == "Enter") {
@@ -30,18 +55,24 @@ const App = () => {
       <div className="container">
         <div className="top">
           <div className="temps">
-            <p>24°C</p>
-          </div>
-          <div className="time">
-            <p>timer</p>
+            {data.main ? <p>{data.main.temp.toFixed(0)}°C</p> : <p>°C</p>}
           </div>
           <div className="description-location">
-            <p>{data.name ? `It's 'weather' in ${data.name}` : "Hmm."}</p>
+            {data.name && data.sys ? (
+              <p>
+                {data.name}, {data.sys.country}
+              </p>
+            ) : (
+              <p>Hmm.</p>
+            )}
+            {data.weather ? <p>{data.weather[0].main}</p> : <p>Hmm.</p>}
           </div>
         </div>
-        <div className="music-player">
-          <h1>title</h1>
-          <h2>artist</h2>
+        <div className="date-time">
+          <p>
+            {dateNow}, {dayName}
+          </p>
+          <p>{timeNow}</p>
         </div>
         <div className="bottom">
           <div className="feels-like">
@@ -59,7 +90,11 @@ const App = () => {
                 data-name="&lt;Transparent Rectangle&gt;"
               />
             </svg>
-            <p>feels like 18°C</p>
+            {data.main ? (
+              <p>feels like {data.main.feels_like.toFixed(0)}°C</p>
+            ) : (
+              <p>feels like?</p>
+            )}
           </div>
           <div className="humidity">
             <svg
@@ -78,7 +113,11 @@ const App = () => {
                 <path d="M14.13 11.53c.76-.245 1.343.546.985 1.26-.163.325-.347.602-.712.731-.977.346-1.786.832-2.632 1.347l-.084.051c-1.083.66-2.282 1.392-3.866 1.656-1.644.273-3.585.032-6.192-1.009a.997.997 0 11.743-1.852c2.392.954 3.951 1.087 5.12.893 1.187-.197 2.092-.744 3.237-1.442 1.088-.663 2.207-1.248 3.4-1.634z" />
               </g>
             </svg>
-            <p>10% humidity</p>
+            {data.main ? (
+              <p>{data.main.humidity}% humidity</p>
+            ) : (
+              <p>humidity</p>
+            )}
           </div>
           <div className="wind-speed">
             <svg
@@ -93,7 +132,11 @@ const App = () => {
                 clipRule="evenodd"
               />
             </svg>
-            <p>8 kph</p>
+            {data.wind ? (
+              <p>{data.wind.speed.toFixed(0)} kph</p>
+            ) : (
+              <p>wind speed</p>
+            )}
           </div>
         </div>
       </div>
