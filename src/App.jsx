@@ -13,25 +13,8 @@ const App = () => {
          // console.log(response.data);
        });
        setLocation("");
-       
      }
    };
-   
-  // get time and date
-  const [currentTime, setCurrentTime] = useState(new Date());
-  useLayoutEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTime(new Date());
-    }, 1000);
-
-    return () => {
-      clearInterval(interval);
-    };
-  }, []);
-  // end
-
-  const timeNow = currentTime.toLocaleTimeString()
-  const dateNow = currentTime.toLocaleDateString()
 
   return (
     <div className="main">
@@ -135,10 +118,6 @@ const App = () => {
               <p>wind speed</p>
             )}
           </div>
-        </div>
-        <div className="date-time">
-          <p>{dateNow}</p>
-          <p>{timeNow}</p>
         </div>
       </div>
     </div>
