@@ -31,11 +31,10 @@ const App = () => {
   // location
   const [data, setData] = useState({});
   const [location, setLocation] = useState("");
-  const weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=b162337f1c528138112bf67bcb4afa9f&units=metric`;
 
   const searchLocation = (event) => {
     if (event.key == "Enter") {
-      axios.get(weatherURL).then((response) => {
+      axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${import.meta.env.VITE_API_KEY}&units=metric`).then((response) => {
         setData(response.data);
         // console.log(response.data);
       });
