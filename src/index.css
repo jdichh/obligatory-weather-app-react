@@ -72,6 +72,17 @@ svg {
   font-weight: 600;
 }
 
+.weather-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.weather-container img {
+  width: 50px;
+  height: 50px
+}
+
 .bottom {
   display: flex;
   justify-content: space-evenly;
