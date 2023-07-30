@@ -1,35 +1,42 @@
-import React, { useState, useLayoutEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
-
-
-
 const App = () => {
-   // location
-   const [data, setData] = useState({});
-   const [location, setLocation] = useState("");
- 
-   const searchLocation = (event) => {
-     if (event.key == "Enter") {
-       axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${import.meta.env.VITE_API_KEY}&units=metric`).then((response) => {
-         setData(response.data);
-         // console.log(response.data);
-       });
-       setLocation("");
-     }
-   };
+  // location
+  const [data, setData] = useState({});
+  const [location, setLocation] = useState("");
 
-  // change bg based on hour and screen width
+  const searchLocation = (event) => {
+    if (event.key == "Enter") {
+      axios
+        .get(
+          `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${
+            import.meta.env.VITE_API_KEY
+          }&units=metric`
+        )
+        .then((response) => {
+          setData(response.data);
+          // console.log(response.data);
+        });
+      setLocation("");
+    }
+  };
+
+  // change bg based on hour
   const currentTime = new Date();
   const currentHour = currentTime.getHours();
-  if (currentHour >= 5 && currentHour < 7){
-    document.body.style.background = "url('./src/assets/backgrounds/morning/2400.webp') no-repeat center center/cover";
+  if (currentHour >= 5 && currentHour < 7) {
+    document.body.style.background =
+      "url('./src/assets/backgrounds/morning/2400.webp') no-repeat center center/cover";
   } else if (currentHour >= 7 && currentHour < 17) {
-      document.body.style.background = "url('./src/assets/backgrounds/day/2400.webp') no-repeat center center/cover";
-  } else if(currentHour >= 17 && currentHour < 18) {
-      document.body.style.background = "url('./src/assets/backgrounds/sunset/2400.webp') no-repeat center center/cover";
+    document.body.style.background =
+      "url('./src/assets/backgrounds/day/2400.webp') no-repeat center center/cover";
+  } else if (currentHour >= 17 && currentHour < 18) {
+    document.body.style.background =
+      "url('./src/assets/backgrounds/sunset/2400.webp') no-repeat center center/cover";
   } else {
-      document.body.style.background = "url('./src/assets/backgrounds/night/2400.webp') no-repeat center center/cover";
+    document.body.style.background =
+      "url('./src/assets/backgrounds/night/2400.webp') no-repeat center center/cover";
   }
 
   return (
