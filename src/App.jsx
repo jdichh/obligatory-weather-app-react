@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useLayoutEffect } from "react";
 import axios from "axios";
 
 const App = () => {
-  const [data, setData] = useState({});
-  const [location, setLocation] = useState("");
+  // get time and date
   const [currentTime, setCurrentTime] = useState(new Date());
   const weekday = [
     "Sunday",
@@ -18,10 +17,7 @@ const App = () => {
   let dayName = weekday[day.getDay()];
   const timeNow = currentTime.toLocaleTimeString();
   const dateNow = currentTime.toLocaleDateString();
-
-  const weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=b162337f1c528138112bf67bcb4afa9f&units=metric`;
-
-  useEffect(() => {
+  useLayoutEffect(() => {
     const interval = setInterval(() => {
       setCurrentTime(new Date());
     }, 1000);
@@ -30,17 +26,22 @@ const App = () => {
       clearInterval(interval);
     };
   }, []);
+  // end
+
+  // location
+  const [data, setData] = useState({});
+  const [location, setLocation] = useState("");
+  const weatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=b162337f1c528138112bf67bcb4afa9f&units=metric`;
 
   const searchLocation = (event) => {
     if (event.key == "Enter") {
       axios.get(weatherURL).then((response) => {
         setData(response.data);
-        console.log(response.data);
+        // console.log(response.data);
       });
       setLocation("");
     }
   };
-
   return (
     <div className="main">
       <div className="search">
@@ -57,13 +58,12 @@ const App = () => {
           <div className="temps">
             {data.main ? <p> {data.main.temp.toFixed(0)}°C</p> : <p>?°C</p>}
           </div>
-          
+
           <div className="weather-container">
             <div className="image">
               {data.weather ? (
                 <img
                   src={`https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`}
-
                 ></img>
               ) : null}
             </div>
@@ -71,12 +71,12 @@ const App = () => {
               {data.weather ? <p>{data.weather[0].main}</p> : null}
             </div>
             <div className="description-location">
-            {data.name && data.sys ? (
-              <p>
-                &nbsp;at {data.name}, {data.sys.country}
-              </p>
-            ) : null}
-          </div>
+              {data.name && data.sys ? (
+                <p>
+                  &nbsp;at {data.name}, {data.sys.country}
+                </p>
+              ) : null}
+            </div>
           </div>
         </div>
         <div className="date-time">
