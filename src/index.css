@@ -38,6 +38,23 @@ svg {
   background-color: rgba(0,0,0, 0.45);
 }
 
+.search {
+  text-align: center;
+  padding: 1rem;
+}
+
+.search input {
+  font-family: 'DM Sans', sans-serif;
+  border-radius: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  border: rgba(255, 255, 255, 0.1);
+  padding: .5rem .5rem;
+}
+
+.search input:focus {
+  outline: 1px solid var(--off-white);
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -62,18 +79,18 @@ svg {
   margin: 1rem auto;
   padding: 1rem;
   background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 5px;
+  border-radius: 3px;
 }
 
 
 @media (min-width: 100em) { 
   body { 
-    background: url(assets/backgrounds/bg-1600.webp) no-repeat center center/cover;
+    background: url(assets/backgrounds/1920.webp) no-repeat center center/cover;
   }
 }
 
 @media (min-width: 135em) { 
   body { 
-    background: url(assets/backgrounds/bg-4000.webp) no-repeat center center/cover;
+    background: url(assets/backgrounds/2400.webp) no-repeat center center/cover;
   }
 }
