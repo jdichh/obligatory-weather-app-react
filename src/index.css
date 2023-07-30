@@ -19,7 +19,6 @@
 }
 
 body {
-  background: url(assets/backgrounds/bg-1280.webp) no-repeat center center/cover;
   content: "";
   z-index: -1;
 }
