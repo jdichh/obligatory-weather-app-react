@@ -41,11 +41,11 @@ const App = () => {
           onKeyPress={searchLocation}
           placeholder="Where are you right now?"
         />
-        <button 
-          className="findMeButton"
-          onClick={getCoordinates}
-        >Find Me
-        </button>
+          <button 
+            className="findMeButton"
+            onClick={getCoordinates}
+          >Find My Location
+          </button>
       </div>
       <div className="container">
         <div className="top">

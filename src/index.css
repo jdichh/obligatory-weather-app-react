@@ -56,7 +56,8 @@ svg {
   background: var(--off-white);
   border: 2px solid var(--off-white);
   color: black;
-  padding: 0.55rem 0.55rem;
+  padding: 0.55rem 3.5rem;
+  margin-left: 2rem;
 }
 
 .search input:focus {
