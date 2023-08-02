@@ -127,11 +127,11 @@ svg {
   }
 }
 
-@media (min-height: 320px) and (max-height: 630px) {
+@media (min-width: 320px) and (max-height: 650px) {
   .container{
     top: 7.5%;
     flex-direction: row;
-    height: 54vh
+    height: 55%
   }
 
   .top {
@@ -144,11 +144,5 @@ svg {
   .bottom {
     margin: 0;
     place-items: center;
-  }
-}
-
-@media (min-height: 440px) and (max-height: 630px) {
-  .bottom {
-    flex-direction: column;
   }
 }
