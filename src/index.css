@@ -115,16 +115,40 @@ svg {
   border-radius: 3px;
 }
 
-@media (min-width: 20em) {
+@media (min-width: 320px) {
   body {
     background: url(./assets/backgrounds/1920.webp) no-repeat center center/cover;
   }
-
-
 }
 
-@media (min-width: 135em) {
+@media (min-width: 2160px) {
   body {
     background: url(./assets/backgrounds/2400.webp) no-repeat center center/cover;
+  }
+}
+
+@media (min-height: 320px) and (max-height: 630px) {
+  .container{
+    top: 7.5%;
+    flex-direction: row;
+    height: 54vh
+  }
+
+  .top {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    place-content: center;
+  }
+
+  .bottom {
+    margin: 0;
+    place-items: center;
+  }
+}
+
+@media (min-height: 440px) and (max-height: 630px) {
+  .bottom {
+    flex-direction: column;
   }
 }

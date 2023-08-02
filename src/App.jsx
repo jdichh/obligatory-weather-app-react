@@ -66,14 +66,15 @@ const App = () => {
             <div className="weather">
               {data.weather ? <p>{data.weather[0].main}</p> : <p>Hmm.</p>}
             </div>
+          </div>
+
             <div className="description-location">
               {data.name && data.sys ? (
                 <p>
-                  &nbsp;at {data.name}, {data.sys.country}
+                  {data.name}, {data.sys.country}
                 </p>
               ) : null}
             </div>
-          </div>
         </div>
 
         <div className="bottom">
