@@ -6,14 +6,23 @@ const App = () => {
   const [data, setData] = useState({});
   const [location, setLocation] = useState("");
 
+  const getCoordinates = () => {
+    navigator.geolocation.getCurrentPosition(async (position) => {
+      const { latitude, longitude } = position.coords;
+      axios
+        .get(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${import.meta.env.VITE_API_KEY}&units=metric`)
+        .then((response) => {
+          setData(response.data);
+          // console.log(response.data);
+        });
+      setLocation("");
+    });
+  };
+
   const searchLocation = (event) => {
     if (event.key == "Enter") {
       axios
-        .get(
-          `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${
-            import.meta.env.VITE_API_KEY
-          }&units=metric`
-        )
+        .get(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${import.meta.env.VITE_API_KEY}&units=metric`)
         .then((response) => {
           setData(response.data);
           // console.log(response.data);
@@ -30,8 +39,13 @@ const App = () => {
           value={location}
           onChange={(event) => setLocation(event.target.value)}
           onKeyPress={searchLocation}
-          placeholder="Location"
+          placeholder="Where are you right now?"
         />
+        <button 
+          className="findMeButton"
+          onClick={getCoordinates}
+        >Find Me
+        </button>
       </div>
       <div className="container">
         <div className="top">
