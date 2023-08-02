@@ -40,12 +40,14 @@ const App = () => {
           onChange={(event) => setLocation(event.target.value)}
           onKeyPress={searchLocation}
           placeholder="Where are you right now?"
-        />
-          <button 
-            className="findMeButton"
-            onClick={getCoordinates}
-          >Find My Location
-          </button>
+        />   
+      </div>
+      <div className="findMe">
+        <button 
+          className="findMeButton"
+          onClick={getCoordinates}
+          >Get My Location
+        </button>
       </div>
       <div className="container">
         <div className="top">

@@ -38,7 +38,7 @@ svg {
 
 .search {
   text-align: center;
-  padding: 1rem;
+  padding: 1rem 1rem 0.5rem 1rem;
 }
 
 .search input {
@@ -50,14 +50,17 @@ svg {
   outline: 1px solid var(--off-white);
 }
 
+.findMe {
+  text-align: center;
+}
+
 .findMeButton {
   font-family: "DM Sans", sans-serif;
   font-size: 1rem;
   background: var(--off-white);
   border: 2px solid var(--off-white);
   color: black;
-  padding: 0.55rem 3.5rem;
-  margin-left: 2rem;
+  padding: 0.5rem 4rem;
 }
 
 .search input:focus {
