@@ -48,6 +48,13 @@ svg {
   padding: 0.5rem 0.5rem;
   border: 2px solid rgba(255, 255, 255, 0);
   outline: 1px solid var(--off-white);
+  min-width:0;
+  width: 12%
+}
+
+.search input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+  opacity: 1;
 }
 
 .findMe {
@@ -60,7 +67,9 @@ svg {
   background: var(--off-white);
   border: 2px solid var(--off-white);
   color: black;
-  padding: 0.5rem 4rem;
+  padding: 0.5rem 0.5rem;
+  min-width:0;
+  width: 12%
 }
 
 .search input:focus {
