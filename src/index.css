@@ -72,6 +72,11 @@ svg {
   width: 15rem;
 }
 
+.findMeButton:active{
+  color: var(--off-white);
+  background-color: rgb(30,30,30);
+}
+
 .search input:focus {
   border: 2px solid #0060DF;
   outline: 2px solid var(--off-white);
