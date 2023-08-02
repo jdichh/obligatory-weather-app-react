@@ -45,12 +45,23 @@ svg {
   font-family: "DM Sans", sans-serif;
   font-size: 1rem;
   background: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0);
   padding: 0.5rem 0.5rem;
+  border: 2px solid rgba(255, 255, 255, 0);
+  outline: 1px solid var(--off-white);
+}
+
+.findMeButton {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1rem;
+  background: var(--off-white);
+  border: 2px solid var(--off-white);
+  color: black;
+  padding: 0.55rem 0.55rem;
 }
 
 .search input:focus {
-  outline: 1px solid var(--off-white);
+  border: 2px solid #0060DF;
+  outline: 2px solid var(--off-white);
 }
 
 .container {
