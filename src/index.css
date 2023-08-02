@@ -48,8 +48,8 @@ svg {
   padding: 0.5rem 0.5rem;
   border: 2px solid rgba(255, 255, 255, 0);
   outline: 1px solid var(--off-white);
-  min-width:0;
-  width: 12%
+  min-width: none;
+  width: 15rem;
 }
 
 .search input::placeholder {
@@ -68,8 +68,8 @@ svg {
   border: 2px solid var(--off-white);
   color: black;
   padding: 0.5rem 0.5rem;
-  min-width:0;
-  width: 12%
+  min-width: none;
+  width: 15rem;
 }
 
 .search input:focus {
@@ -119,6 +119,8 @@ svg {
   body {
     background: url(./assets/backgrounds/1920.webp) no-repeat center center/cover;
   }
+
+
 }
 
 @media (min-width: 135em) {
