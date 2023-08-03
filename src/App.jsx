@@ -40,19 +40,21 @@ const App = () => {
           onChange={(event) => setLocation(event.target.value)}
           onKeyPress={searchLocation}
           placeholder="Where are you right now?"
+          aria-label="Where are you right now? Enter your location here."
         />   
       </div>
       <div className="findMe">
         <button 
           className="findMeButton"
           onClick={getCoordinates}
+          aria-label="Button that gets your current coordinates. Requires location services."
           >Get My Location
         </button>
       </div>
       <div className="container">
         <div className="top">
           <div className="temps">
-            {data.main ? <p> {data.main.temp.toFixed(0)}°C</p> : <p>?°C</p>}
+            {data.main ? <h1> {data.main.temp.toFixed(0)}°C</h1> : <h1>?°C</h1>}
           </div>
 
           <div className="weather-container">
