@@ -21,6 +21,7 @@
 body {
   content: "";
   z-index: -1;
+  visibility: hidden;
 }
 
 svg {
