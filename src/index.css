@@ -148,7 +148,13 @@ svg {
   }
 
   .bottom {
+    display: flex;
+    flex-direction: column;
     margin: 0;
     place-items: center;
+  }
+
+  .bottom > div {
+    padding-right: 1rem;
   }
 }
