@@ -1,7 +1,7 @@
-import React, { useState, createContext } from "react";
+import React from "react";
 import SearchLocation from "./components/SearchLocation";
 import WeatherData from "./components/WeatherData";
-export const Context = createContext();
+import { useStore } from "./zustand/store";
 
 const App = () => {
   let domReady = (checkState) => {
@@ -15,18 +15,13 @@ const App = () => {
     document.body.style.visibility = "visible";
   });
 
-  const [data, setData] = useState({});
-  const [location, setLocation] = useState("");
-
   return (
-    <Context.Provider value={[data, setData, location, setLocation]}>
-      <div className="main">
-        <SearchLocation />
-        <div className="container">
-          <WeatherData />
-        </div>
+    <div className="main">
+      <SearchLocation />
+      <div className="container">
+        <WeatherData />
       </div>
-    </Context.Provider>
+    </div>
   );
 };
 
