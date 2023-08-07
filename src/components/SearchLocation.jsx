@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useStore } from "../zustand/store"; 
+import { useStore } from "../zustand/store";
 
 const SearchLocation = () => {
   const setData = useStore((state) => state.setData); // get the setData action
-  const [location, setLocation] = useState('');
+  const [location, setLocation] = useState("");
 
   const getCoordinates = () => {
     navigator.geolocation.getCurrentPosition(async (position) => {

@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import SearchLocation from "./components/SearchLocation";
 import WeatherData from "./components/WeatherData";
 import { useStore } from "./zustand/store";
 
 const App = () => {
-  
   let domReady = (checkState) => {
     document.readyState === "interactive" || document.readyState === "complete"
       ? checkState()
@@ -17,12 +16,12 @@ const App = () => {
   });
 
   return (
-      <div className="main">
-        <SearchLocation />
-        <div className="container">
-          <WeatherData />
-        </div>
+    <div className="main">
+      <SearchLocation />
+      <div className="container">
+        <WeatherData />
       </div>
+    </div>
   );
 };
 
