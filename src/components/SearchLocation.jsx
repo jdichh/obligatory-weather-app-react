@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import axios from "axios";
 import { useStore } from "../zustand/store";
+import { WeatherContext } from "../App";
 
 const SearchLocation = () => {
-  const setData = useStore((state) => state.setData); // get the setData action
+  const [data, setData] = useContext(WeatherContext); // get the setData action
   const [location, setLocation] = useState("");
 
   const getCoordinates = () => {

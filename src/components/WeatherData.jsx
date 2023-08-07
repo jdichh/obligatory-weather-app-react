@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useStore } from "../zustand/store";
+import { WeatherContext } from "../App";
 
 const WeatherData = () => {
-  const { data } = useStore();
+  const [data, setData] = useContext(WeatherContext);
   return (
     <>
       <div className="top">
