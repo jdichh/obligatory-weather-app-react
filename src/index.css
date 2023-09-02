@@ -29,7 +29,7 @@ svg {
   height: 25px;
 }
 
-.main {
+#root {
   position: relative;
   width: 100%;
   height: 100vh;
@@ -83,7 +83,7 @@ svg {
   outline: 2px solid var(--off-white);
 }
 
-.container {
+main {
   display: flex;
   flex-direction: column;
   justify-content: space-between;

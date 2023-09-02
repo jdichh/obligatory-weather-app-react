@@ -16,12 +16,12 @@ const App = () => {
   });
 
   return (
-    <div className="main">
+    <>
       <SearchLocation />
-      <div className="container">
+      <main>
         <WeatherData />
-      </div>
-    </div>
+      </main>
+    </>
   );
 };
 

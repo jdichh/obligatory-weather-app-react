@@ -32,6 +32,7 @@ const WeatherData = () => {
           ) : null}
         </div>
       </div>
+      
       <div className="bottom">
         <div className="feels-like">
           <svg

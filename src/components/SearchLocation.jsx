@@ -42,7 +42,7 @@ const SearchLocation = () => {
   };
 
   return (
-    <>
+    <header>
       <div className="search">
         <input
           type="text"
@@ -57,12 +57,12 @@ const SearchLocation = () => {
         <button
           className="findMeButton"
           onClick={getCoordinates}
-          aria-label="Button that gets your current coordinates. Requires location services."
+          aria-label="Find my location button. Requires location services."
         >
           Get My Location
         </button>
       </div>
-    </>
+    </header>
   );
 };
 
