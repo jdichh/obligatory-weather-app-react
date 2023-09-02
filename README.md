@@ -1,7 +1,8 @@
 # Obligatory Weather App in React
-A weather app that uses the OpenWeatherMap API. The name is supposed to poke fun at how weather app projects are always recommended for beginners to do. No offense though, I learned more on how to fetch specific data from an API. 
+A weather app that uses the OpenWeatherMap API. The name is supposed to poke fun at how weather app projects are always recommended for beginners to do (No offense). Zustand version in main branch and useContext version in useContext branch.
 ## Checklist:
 <ul>
   <li><strike>Separate into components</strike></li>
   <li><strike>Zustand-ify</strike></li>
+  <li>Improve the UI/UX of text input and "Get My Location" button.</li>
 </ul> 
