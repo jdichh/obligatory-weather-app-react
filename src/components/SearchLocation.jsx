@@ -57,7 +57,7 @@ const SearchLocation = () => {
         <button
           className="findMeButton"
           onClick={getCoordinates}
-          aria-label="Find my location button. Requires location services."
+          aria-label="Get my location button. Requires location services."
         >
           Get My Location
         </button>
