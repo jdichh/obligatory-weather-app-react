@@ -1,2 +1,5 @@
-# Obligatory Weather App in React (useContext Version)
-A weather app that uses the OpenWeatherMap API. The name is supposed to poke fun at how weather app projects are always recommended for beginners to do. No offense though, I learned more on how to fetch specific data from an API. 
+# Another Weather App in React (useContext Version)
+A weather app that uses the OpenWeatherMap API. 
+
+[Zustand Version](https://github.com/jdichh/obligatory-weather-app-react) <br>
+useContext Version (current)
