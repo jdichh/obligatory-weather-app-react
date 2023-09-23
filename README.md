@@ -1,5 +1,5 @@
-# Obligatory Weather App in React
-A weather app that uses the OpenWeatherMap API. The name is supposed to poke fun at how weather app projects are always recommended for beginners to do (No offense). 
+# Another Weather App in React (Zustand Version)
+A weather app that uses the OpenWeatherMap API. 
 
 Zustand Version (current) <br>
 [useContext Version](https://github.com/jdichh/obligatory-weather-app-react/tree/useContext-version)
